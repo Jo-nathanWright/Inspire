@@ -44,4 +44,12 @@ export default class TodosController {
             window.alert("We had an problem deleting that task : " + error)
         }
     }
+
+    async updateTask(id) {
+        try {
+            todosService.updateTask(id)
+        } catch (error) {
+            window.alert("We ran into a problem updating your TodoList : " + error)
+        }
+    }
 }

@@ -12,7 +12,7 @@ export default class Todo {
         <div class="d-flex flex-row">
             <div class="col-3 align-self-center">
                 <div class="form-check" id="${this.id}">
-                    <input type="checkbox" class="form-check-input" ${this.isCompleted}>
+                    <input type="checkbox" class="form-check-input" onclick="app.todosController.updateTask('${this.id}')" ${this.isCompleted}>
                     <label class="form-check-label" for="${this.user}">
                         ${this.description}
                 </div >

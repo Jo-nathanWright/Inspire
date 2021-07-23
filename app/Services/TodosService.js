@@ -20,6 +20,18 @@ class TodosService {
         console.log(res.data);
         ProxyState.Todo = ProxyState.Todo.filter(t => t.id != id)
     }
+
+    async updateTask(id) {
+        let found = ProxyState.Todo.find(t => t.id == id)
+
+        found.completed = !found.completed
+
+        console.log("Completed From the Service " + found.completed)
+        console.log(found);
+        let res = await Sandbox.put("jonathan/todos/" + id, found)
+        console.log(res.data);
+        ProxyState.Todo = ProxyState.Todo
+    }
 }
 
 const todosService = new TodosService();
