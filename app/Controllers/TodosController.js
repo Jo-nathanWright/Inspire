@@ -7,6 +7,12 @@ function _drawItem() {
     let template = ''
     Item.forEach(i => template += i.Template)
     document.getElementById("Tasks").innerHTML = template
+    document.getElementById("Task-Total").innerText = _findTemplate()
+}
+
+function _findTemplate() {
+    let completedTasks = ProxyState.Todo.filter(t => t.completed == true)
+    return `${completedTasks.length}/${ProxyState.Todo.length}`
 }
 
 export default class TodosController {
