@@ -11,3 +11,26 @@ class App {
 }
 
 window["app"] = new App();
+
+function startTime() {
+  let date = new Date()
+  let hour = date.getHours()
+  let minutes = date.getMinutes()
+  let period = "AM"
+  if (hour == 0) {
+    hour = 12
+  } else if (hour >= 12) {
+    hour = hour - 12
+    period = "PM"
+  }
+  // @ts-ignore
+  hour = hour < 10 ? "0" + hour : hour;
+  // @ts-ignore
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+
+  let time = `<h1>${hour}:${minutes} ${period}</h1>`
+  document.getElementById('txt').innerHTML = time
+  setTimeout(startTime, 1000)
+}
+
+startTime()
