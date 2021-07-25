@@ -28,7 +28,11 @@ function startTime() {
   // @ts-ignore
   minutes = minutes < 10 ? "0" + minutes : minutes;
 
-  let time = `<h1>${hour}:${minutes} ${period}</h1>`
+  let time = `
+  <div class="text-center">
+  <h1>${hour}:${minutes} ${period}</h1>
+  </div>
+  `
   document.getElementById('txt').innerHTML = time
   setTimeout(startTime, 1000)
 }

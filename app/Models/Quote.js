@@ -6,9 +6,13 @@ export default class Quote {
 
     get Template() {
         return `
-        <div class="text-center">
-            <p>${this.content}</p>
-            <p>${this.author}</p>
+        <div class="text-center quote">
+            <div>
+                <p>${this.content}</p>
+            </div>
+            <div class="author">
+                <p>${this.author}</p>
+            </div>
         </div>
         `
     }
