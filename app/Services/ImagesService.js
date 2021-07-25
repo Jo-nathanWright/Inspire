@@ -2,5 +2,4 @@ class ImagesService {
 
 }
 
-const imagesService = new ImagesService();
-export default imagesService;
+export const imagesService = new ImagesService();
