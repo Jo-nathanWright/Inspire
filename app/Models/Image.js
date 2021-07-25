@@ -1,12 +1,11 @@
 export default class Image {
     constructor({ url, largeImgUrl }) {
         this.img = url
-        this.largeimg = largeImgUrl
+        this.largeImage = largeImgUrl
     }
 
     get Template() {
-        return `
-        
-        `
+        return document.body.style.backgroundImage = `url('${this.largeImage}')`, document.body.style.backgroundSize = "100%"
+
     }
 }
