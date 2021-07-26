@@ -1,24 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<style>
-    body.debug .container,
-    body.debug .container-fluid {
-        outline: 2px double blue;
-        outline-offset: -2px;
-    }
-
-    body.debug .row {
-        outline: 2px dashed red;
-        outline-offset: -2px;
-    }
-
-    body.debug [class*="col-"] {
-        outline: 2px dotted forestgreen;
-        outline-offset: -3px;
-    }
-</style>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,10 +13,10 @@
     <title>Inspire</title>
 </head>
 
-<body class="debug">
+<body>
     <main class="container-fluid">
-        <div class="text-light">
-            <div id="Image"></div>
+        <div id="Image"></div>
+        <div class="d-flex flex-column justify-content-center text-light shadow-text">
             <div class="row justify-content-end">
                 <div id="weather"></div>
             </div>
@@ -61,7 +43,7 @@
                         </form>
                     </div>
                     <div>
-                        <div class="text-right" id="Task-Total"></div>
+                        <div class="text-center" id="Task-Total"></div>
                         <div id="Tasks"></div>
                     </div>
                 </div>

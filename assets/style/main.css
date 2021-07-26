@@ -10707,4 +10707,8 @@ main {
 .action {
   cursor: pointer;
 }
+
+.shadow-text{
+  text-shadow: -1px 1px 4px black;
+}
 /*# sourceMappingURL=main.css.map */
