@@ -5,7 +5,7 @@ export default class Image {
     }
 
     get Template() {
-        return document.body.style.backgroundImage = `url('${this.largeImage}')`, document.body.style.backgroundSize = "100%"
+        return document.body.style.backgroundImage = `url('${this.largeImage}')`, document.body.style.backgroundSize = "cover"
 
     }
 }
