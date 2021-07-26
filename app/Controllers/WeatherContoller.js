@@ -2,7 +2,11 @@ import { ProxyState } from "../AppState.js";
 import { weatherService } from "../Services/WeatherService.js";
 
 function _drawWeather() {
-    document.getElementById("weather").innerHTML = ProxyState.Weather.Template
+    if (ProxyState.Weather.switched == false) {
+        document.getElementById("weather").innerHTML = ProxyState.Weather.Celsius
+    } else {
+        document.getElementById("weather").innerHTML = ProxyState.Weather.Fahrenheit
+    }
 }
 
 export default class WeatherController {
@@ -18,5 +22,9 @@ export default class WeatherController {
         } catch (error) {
             window.alert("We had a problem getting the weather : " + error)
         }
+    }
+
+    updateTemp(temp) {
+        weatherService.updateTemp(temp);
     }
 }

@@ -3,22 +3,14 @@ export default class Weather {
         this.name = name
         this.temp = main.temp
         this.icon = weather[0].icon
-    }
-
-    get Template() {
-        return `
-        <div>
-            <h3>${this.temp}</h3>
-            <p>${this.name} <span>↻</span>
-        </div>
-        `
+        this.switched = false
     }
 
     get Celsius() {
         return `
         <div>
-            <h3>${Math.floor(this.temp - 273.15)}</h3>
-            <p>${this.name}</p>
+            <h3>${Math.floor(this.temp - 273.15)}° C</h3>
+            <p>${this.name} <span class="action" onclick="app.weatherController.updateTemp(false)">↺</span></p>
         </div>
         `
     }
@@ -26,8 +18,8 @@ export default class Weather {
     get Fahrenheit() {
         return `
         <div>
-            <h3>${Math.floor((this.temp - 273.15) * 9 / 5 + 32)}</h3>
-            <p>${this.name}</p>
+            <h3>${Math.floor((this.temp - 273.15) * 9 / 5 + 32)}° F</h3>
+            <p>${this.name} <span class="action" onclick="app.weatherController.updateTemp(true)">↺</span></p>
         </div>
         `
     }

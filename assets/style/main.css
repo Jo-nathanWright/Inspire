@@ -10703,4 +10703,8 @@ main {
   opacity: 0;
   transition: all .3s linear
 }
+
+.action {
+  cursor: pointer;
+}
 /*# sourceMappingURL=main.css.map */
