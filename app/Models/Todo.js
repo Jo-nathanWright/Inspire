@@ -16,7 +16,7 @@ export default class Todo {
                 <div class="form-check" id="${this.id}">
                     <input type="checkbox" class="form-check-input" onclick="app.todosController.updateTask('${this.id}')" ${this.isCompleted}>
                     <label class="form-check-label" for="${this.user}">
-                        ${this.description} <span class = "text-dark action" onclick="app.todosController.deletetask('${this.id}')"> <i class="mdi mdi-delete"></i> </span>
+                        ${this.description} <span class = "text-dark action shadow-text-light" onclick="app.todosController.deletetask('${this.id}')"> <i class="mdi mdi-delete"></i> </span>
                 </div >
             </div>
         </div>
