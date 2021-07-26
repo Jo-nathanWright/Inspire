@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+    body.debug .container,
+    body.debug .container-fluid {
+        outline: 2px double blue;
+        outline-offset: -2px;
+    }
+
+    body.debug .row {
+        outline: 2px dashed red;
+        outline-offset: -2px;
+    }
+
+    body.debug [class*="col-"] {
+        outline: 2px dotted forestgreen;
+        outline-offset: -3px;
+    }
+</style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,27 +31,41 @@
     <title>Inspire</title>
 </head>
 
-<body>
+<body class="debug">
     <main class="container-fluid">
-        <form onsubmit="app.todosController.newTask(event)">
-            <div class="d-flex flex-row">
-                <div class="form-group col-1 mb-1 ml-1">
-                    <label for="taskName"></label>
-                    <input type="text" name="taskName" class="form-control" placeholder="Add Todo..." minlength="3"
-                        maxlength="50" required>
-                </div>
-                <div class="col-1 align-self-end mb-1">
-                    <button type="submit" class="btn">➕</button>
-                </div>
-            </div>
-        </form>
         <div class="text-light">
             <div id="Image"></div>
-            <div id="Task-Total"></div>
-            <div id="Tasks"></div>
-            <div id="txt"></div>
-            <div id="quote"></div>
-            <div id="weather"></div>
+            <div class="row justify-content-end">
+                <div id="weather"></div>
+            </div>
+            <div class="row justify-content-center ">
+                <div id="txt"></div>
+            </div>
+            <div class="row d-flex flex-row justify-content-center">
+                <div id="quote" class="col-6"></div>
+            </div>
+            <div class="row d-flex flex-column align-content-end">
+                <div class="col-3">
+                    <div class="d-flex justify-content-end align-content-end">
+                        <form onsubmit="app.todosController.newTask(event)">
+                            <div class="d-flex flex-row justify-content-center">
+                                <div class="form-group col-5 mb-1">
+                                    <label for="taskName"></label>
+                                    <input type="text" name="taskName" class="form-control" placeholder="Add Todo..."
+                                        minlength="3" maxlength="50" required>
+                                </div>
+                                <div class="col-1 align-self-end mb-1">
+                                    <button type="submit" class="btn">➕</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div>
+                        <div class="text-right" id="Task-Total"></div>
+                        <div id="Tasks"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <footer class="bg-dark text-light">

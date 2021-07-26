@@ -6,8 +6,8 @@ export default class Quote {
 
     get Template() {
         return `
-        <div class="text-center quote">
-            <div>
+        <div class="d-flex flex-column text-center quote my-3">
+            <div class>
                 <p>${this.content}</p>
             </div>
             <div class="author">

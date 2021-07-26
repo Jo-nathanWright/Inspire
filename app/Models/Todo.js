@@ -12,17 +12,14 @@ export default class Todo {
     get Template() {
         return `
         <div class="d-flex flex-row justify-content-end">
-            <div class="col-3 align-self-center">
+            <div class="align-self-center">
                 <div class="form-check" id="${this.id}">
                     <input type="checkbox" class="form-check-input" onclick="app.todosController.updateTask('${this.id}')" ${this.isCompleted}>
                     <label class="form-check-label" for="${this.user}">
-                        ${this.description}
+                        ${this.description} <span class = "text-dark action" onclick="app.todosController.deletetask('${this.id}')"> <i class="mdi mdi-delete"></i> </span>
                 </div >
             </div>
-            <div class="col-1 align-self-start">
-                <button type="submit" class="btn" onclick="app.todosController.deletetask('${this.id}')"> <i class="mdi mdi-delete"></i> </button>
-            </div>
-            </div>
+        </div>
         `
     }
 

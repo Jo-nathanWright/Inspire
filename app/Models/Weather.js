@@ -8,7 +8,7 @@ export default class Weather {
 
     get Celsius() {
         return `
-        <div>
+        <div class="col-12 d-flex flex-column">
             <h3>${Math.floor(this.temp - 273.15)}° C</h3>
             <p>${this.name} <span class="action" onclick="app.weatherController.updateTemp(false)">↺</span></p>
         </div>
@@ -17,7 +17,7 @@ export default class Weather {
 
     get Fahrenheit() {
         return `
-        <div>
+        <div class="col-12 d-flex flex-column">
             <h3>${Math.floor((this.temp - 273.15) * 9 / 5 + 32)}° F</h3>
             <p>${this.name} <span class="action" onclick="app.weatherController.updateTemp(true)">↺</span></p>
         </div>
